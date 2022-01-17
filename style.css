@@ -1,0 +1,686 @@
+/* Navigation bar of a player */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(7, 7, 53);
+}
+aside{
+    width: 25%;
+    display: inline-block;
+    position: relative;
+    top: -1160px;
+    margin-left: 20px;
+}
+main{
+    /* margin-left: 20px; */
+    width: 70%;
+    display: inline-block;
+}
+.nav_bar{
+    display: flex;
+    /* background-color: rgb(7, 7, 53); */
+    position: relative;
+    width: 100%;
+
+}
+.player_logo{
+    position: relative;
+    left: 50px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+#player_title{
+    position: absolute;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-left: 60px;
+    color: whitesmoke;
+    top: 8px;
+    
+}
+#player_title span{
+    font-weight: 600;
+    color: white;
+}
+.menu{
+    position: absolute;
+    font-size: 1.4rem;
+    left: 280px;
+    top: 30px;
+}
+.menu a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.search_button{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 870px;
+    height: 40px;
+    width: 30px;
+    color: white;
+    border-style: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: midnightblue;
+}
+.search_audio{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 1180px;
+    height: 40px;
+    width: 30px;
+    color: whitesmoke;
+    border-style: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: midnightblue;
+}
+#search_bar{
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 900px;
+    width: 280px;
+    height: 40px;
+    border-style: none;
+    background-color: midnightblue;
+}
+.search_button:hover, .search_audio:hover {
+    cursor: pointer;
+}
+.notification {
+    height: 70px;
+    width: 70px;
+    /* background-color: maroon; */
+    position: relative;
+    left: 1200px;
+}
+.notification i{
+    position: absolute;
+    color: whitesmoke;
+    top: 25px;
+    left: 15px;
+    font-size: 2.2rem;
+}
+#profile_pic{
+    position: absolute;
+    left: 1390px;
+    top: 15px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+@media screen and (max-width: 650px){
+    .search_audio{
+        top: 20px;
+        left: 630px;
+        height: 40px;
+        width: 30px;
+    }
+    .search_button{
+        top: 20px;
+        left: 400px;
+        height: 40px;
+        width: 30px;
+    }
+    #search_bar{
+        top: 20px;
+    left: 430px;
+    width: 200px;
+    height: 40px;
+    }
+}
+/* Carousel for sliding images */
+[type= radio]{
+    display: none;
+}
+#slider{
+    height: 45vh;
+    perspective: 1000px;
+    position: relative;
+    top: 20px;
+    transform-style: preserve-3d;
+    /* border: 2px solid red; */
+}
+#slider label{
+    margin: auto;
+    height: 100%;
+    width: 60%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+  transform: translate3d(-30%,0,-200px);
+}
+
+#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(-15%,0,-100px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+  box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+  transform: translate3d(0,0,0);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(15%,0,-100px);
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+  transform: translate3d(30%,0,-200px);
+}
+
+/* Release section of songs */
+#release_container{
+    /* background-color: rgb(7, 7, 53); */
+    margin-left: 100px;
+}
+#release_container h2{
+    color: white;
+    margin-top: 50px;
+}
+#container{
+    height: 45%;
+    width: 70%;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-top: 20px;
+    animation: play 1s ease-in-out;
+}
+@keyframes play{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+.new_song{
+    display: flex;
+    height: 30%;
+    width: 45%;
+    /* border: 2px solid red; */
+    margin-right: 20px;
+    
+}
+.album{
+    height: 100px;
+    width: 100px;
+}
+#title1, #title2{
+    font-size: 1.1rem;
+    position: relative;
+    top: 15px;
+    margin-left: 5px;
+    color: white;
+}
+#detail1{
+    position: relative;
+    top: -39;
+    float: right;
+    left: 48;
+}
+.new_song span a {
+    color: white;
+}
+#detail2{
+    position: relative;
+    top: -16;
+    float: right;
+    left: 64;
+}
+/* Artist list */
+.artist_container{
+    /* background-color: rgb(7, 7, 53); */
+    margin-left: 100px;
+}
+.artist_container h2{
+    color: white;
+}
+.popular_artist{
+    /* border: 2px solid red; */
+    height: 30%;
+    width: 70%;
+    display: flex;
+}
+.popular_artist figcaption{
+    text-align: center;
+    /* background-color: rgb(7, 7, 53); */
+    color: whitesmoke;
+    font-weight: bold;
+    padding-top: 5px;
+}
+.artist{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    margin-top: 50px;
+    /* margin-bottom: 30px; */
+    padding-right: 10px;
+    padding-left: 10px;
+    
+}
+.artist:hover{
+    cursor: pointer;
+    transform: rotate(30deg);
+}
+/* Mood Songs */
+#mood_beats{
+    border: 2px solid black;
+    height: 25%;
+    width: 90%;
+    display: flex;
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: midnightblue;
+    margin-left: 100px;
+}
+#records{
+    height: 150px;
+    width: 150px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.record_items{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-right: 10px;
+    opacity: 0.8;
+}
+#mood_beats figcaption{
+    text-align: center;
+    position: relative;
+    top: -70px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Different music types */
+
+#music_type{
+    /* border: 2px solid black; */
+    height: 25%;
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    margin-left: 100px;
+    /* padding-top: 20px;
+    background-color: midnightblue; */
+}
+.type{
+    height: 160px;
+    width: 303px;
+    margin-right: 18px;
+    transition: all 0.5s ease-in-out;
+}
+.type:hover{
+    cursor: pointer;
+    transform: scale(0.8) translateZ(1px);
+}
+#music_type figcaption{
+    text-align: center;
+    position: relative;
+    top: -90px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Latest english album section */
+.English_collection{
+    /* background-color: rgb(7, 7, 53); */
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.English_collection h2{
+    color: white;
+}
+.eng_collection{
+    /* border: 2px solid red; */
+    height: 32%;
+    width: 100%;
+    display: flex;
+    margin-left: -14px;
+}
+.enlish_track{
+    height: 165px;
+    width: 165px;
+    /* border-radius: 50%; */
+    margin-top: 15px;
+    /* margin-bottom: 30px; */
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.English_collection figcaption{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+.English_collection h3{
+    color: whitesmoke;
+}
+
+/* Latest  album section */
+.hindi_collection{
+    /* background-color: rgb(7, 7, 53); */
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.hindi_collection h2{
+    color: white;
+}
+.hindi_album{
+    /* border: 2px solid red; */
+    height: 32%;
+    width: 100%;
+    display: flex;
+    margin-left: -14px;
+}
+.hindi_track{
+    height: 165px;
+    width: 165px;
+    /* border-radius: 50%; */
+    margin-top: 15px;
+    /* margin-bottom: 30px; */
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.hindi_collection figcaption{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+.hindi_collection h3{
+    color: whitesmoke;
+}
+
+/* Aside queue section for song queue */
+.queue_container h2{
+    display: inline-block;
+}
+.queue_list{
+    height: 700px;
+    width:  100%;
+    /* border: 2px solid black; */
+    overflow-y: scroll;
+    margin-top: 30px;
+    
+}
+.queue_list::-webkit-scrollbar {
+    width: 0px;
+}
+
+.queue_item{
+    height: 80px;
+    width: 320px;
+    /* border: 2px solid chartreuse; */
+    display: flex;
+    margin-top: 15px;
+}
+.icon{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 60px;
+    width: 60px;
+}
+#numbering{
+    margin-top: 30px;
+    
+}
+.queue_container figcaption{
+    margin-top: -48px;
+    margin-left: 85px;
+    color: white;
+}
+.queue_item i{
+    margin-top: 30px;
+    margin-left: 150px;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    
+}
+/* button {
+    margin-left: 180px;
+    font-size: 1.1rem;
+    border-style: none;
+    background: transparent;
+} */
+.queue_container a{
+    text-decoration: none;
+    color: springgreen;
+    margin-left: 200px;
+}
+.queue_container h2{
+    color: white;
+    font-size: 1.7rem;
+}
+.queue_container h5{
+    color: white;
+    
+}
+.queue_container a i{
+    transform: rotate(90deg);
+    margin-top: 0px;
+    
+}
+.queue_container a{
+    font-size: 1.2rem;
+}
+#page{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+#page:target{
+    height: 9%;
+    width: 17%;
+    left: 77%;
+    top: 19%;
+    background-color: white;
+    /* border: 2px solid black; */
+}
+#page2{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+#page2 p{
+    font-size: 1.2rem;
+}
+/* #page2 a{
+    text-decoration: none;
+} */
+#page2:target{
+    height: 36%;
+    width: 25%;
+    left: 40%;
+    top: -58%;
+    background-color: white;
+    /* border: 2px solid black; */
+}
+
+/* audio player */
+
+#player{
+    height: 80px;
+    width: 100%;
+    background-color: #153e60;
+    display: flex;
+    /* display: ; */
+}
+#player:hover{
+    height: 80px;
+    width: 100%;
+    background-color: #153e60;
+    display: flex;
+    visibility: visible;
+}
+
+
+
+#picture{
+    height: 70px;
+    width: 70px;
+    margin-left: 80px;
+    margin-top: 5px;
+}
+.name{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    color: white;
+}
+.singer{
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    font-size: 1.1rem;
+    color: grey;
+}
+.like-ban{
+    margin-top: 25px;
+    margin-left: 40px;
+    font-size: 1.2rem;
+    color: grey;
+}
+.btns{
+    height: 80px;
+    width: 400px;
+    background-color: #1c2156;
+    margin-left: 200px;
+}
+.iconfont{
+    font-size: 1.8rem;
+}
+button i{
+    font-size: 1.4rem;  
+}
+#seek-slider{
+    width: 350px;
+    margin-left: 25px;
+    height: 4px;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+#play-icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-left: 0px;
+    margin-top: 10px;
+    animation: spinner 0.4s ease-in-out 2 alternate;
+}
+#left{
+    margin-left: 160px;
+}
+.sound-adjustment{
+    height: 80px;
+    width: 200px;
+    background-color: #1c2156;
+    margin-left: 180px;
+    
+}
+#volume{
+    padding-top: 35px;
+    padding-right: 10px;
+    color: grey;
+}
+
+
+@media screen and (max-width: 800px){
+    aside{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    main{
+        width: 100%;
+        min-width: 750px;
+    }
+    #profile_pic{
+        position: absolute;
+        left: 550px;
+        top: 15px;
+    }
+    .popular_artist{
+        height: 30%;
+        width: 80%;
+        
+    }
+    .artist_container{
+        margin-left: 0px;
+    }
+    #mood_beats{
+        margin-left: 0px;
+        width: 100%;
+    }
+    #music_type{
+        margin-left: 0px;
+    }
+    .English_collection{
+        margin-left: 0px;
+    }
+    .hindi_collection{
+        margin-left: 0px;
+    }
+    .search_button{
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        left: 440px;
+        height: 40px;
+        width: 30px;
+        border-radius: 0;
+        color: white;
+    }
+    #search_bar{
+        position: absolute;
+        top: 20px;
+        left: 300px;
+        width: 140px;
+        height: 40px;
+    }
+    .player{
+        display: none;
+    }
+}
